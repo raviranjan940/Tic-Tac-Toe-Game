@@ -39,9 +39,9 @@ boxes.forEach((box) => {
 
     let isWinner = checkWinner();
 
-    if(count === 9 && !isWinner){
-      gameDraw();
-    }
+    // if(count === 9 && !isWinner){
+    //   gameDraw();
+    // }
   });
 });
 
@@ -52,6 +52,7 @@ const gameDraw = () => {
 };
 
 const resetGame = () => {
+  count = 0;
   turnO = true;
   enableBoxes();
   msgContainer.classList.add("hide");
@@ -88,6 +89,9 @@ const checkWinner = () => {
         showResult(pos1Val);
       }
     }
+  }
+  if(count === 9){
+    gameDraw();
   }
 };
 
